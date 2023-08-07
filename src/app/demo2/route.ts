@@ -13,5 +13,7 @@ export const GET = function () {
     date: new Date(),
     hds,
     test: getTestValue(),
+    // @ts-ignore
+    symbolTest: global[Symbol.for('test')],
   }));
 }

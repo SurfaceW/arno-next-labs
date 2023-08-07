@@ -14,3 +14,6 @@ export function getTestValue() {
   // @ts-ignore
   return global['test'];
 }
+
+// @ts-ignore
+global[Symbol.for('test')] = Math.random().toString();
