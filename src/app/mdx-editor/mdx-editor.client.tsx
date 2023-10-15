@@ -12,7 +12,14 @@ export function EditorDemo() {
   const ref = useRef(null);
   return (
     <Suspense fallback="isLoadingComp">
-      <EditorComp markdown='# Hello, World' editorRef={ref} />
+      <EditorComp markdown={`# Hello World
+:::prompt
+You have a prompt here.
+:::
+
+## Hey Jude
+Don't make it bad
+`} editorRef={ref} />
     </Suspense>
   );
 }

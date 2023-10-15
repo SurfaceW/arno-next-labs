@@ -13,6 +13,8 @@ import {
   toolbarPlugin,
 } from "@mdxeditor/editor";
 
+import { PromptDirectiveDescriptor } from './prompt-directive/prompt.directive';
+
 interface EditorProps {
   markdown: string;
   editorRef?: React.MutableRefObject<MDXEditorMethods | null>;
@@ -52,7 +54,7 @@ const Editor: FC<EditorProps> = ({ markdown, editorRef }) => {
         codeMirrorPlugin({
           codeBlockLanguages: { js: 'JavaScript', css: 'CSS', txt: 'text', tsx: 'TypeScript' },
         }),
-        directivesPlugin({ directiveDescriptors: [AdmonitionDirectiveDescriptor] }),
+        directivesPlugin({ directiveDescriptors: [AdmonitionDirectiveDescriptor, PromptDirectiveDescriptor] }),
         markdownShortcutPlugin(),
       ]}
     />
